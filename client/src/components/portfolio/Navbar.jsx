@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiDownload } from 'react-icons/fi';
+import { FiMenu, FiX, FiDownload, FiLayers } from 'react-icons/fi';
 import { personalInfo, navLinks } from './data';
 import { useActiveSection } from './useScrollReveal';
 import { Button } from '../ui/Button';
 
-export function Navbar() {
+export function Navbar({ cycleTheme, activeTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -39,8 +39,8 @@ export function Navbar() {
           </a>
           
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
-            <div className="flex space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex space-x-6">
               {navLinks.map((link) => (
                 <a
                   key={link.id}
@@ -53,13 +53,27 @@ export function Navbar() {
                 </a>
               ))}
             </div>
-            {personalInfo.resumeUrl && (
-              <a href={personalInfo.resumeUrl} download target="_blank" rel="noopener noreferrer">
-                <Button variant="secondary" className="py-1.5 px-4 text-xs flex items-center gap-1.5 border-white/10 hover:border-accent hover:text-accent">
-                  <FiDownload size={13} /> Resume
-                </Button>
-              </a>
-            )}
+            
+            <div className="flex items-center gap-3 border-l border-white/10 pl-6">
+              {cycleTheme && (
+                <button
+                  onClick={cycleTheme}
+                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-muted hover:text-white flex items-center justify-center shadow-md cursor-pointer hover:scale-105 active:scale-95 transition-all border border-white/5"
+                  title="Cycle Accent Theme"
+                  aria-label="Cycle Accent Theme"
+                >
+                  <FiLayers size={15} className="animate-spin-slow text-accent" />
+                </button>
+              )}
+
+              {personalInfo.resumeUrl && (
+                <a href={personalInfo.resumeUrl} download target="_blank" rel="noopener noreferrer">
+                  <Button variant="secondary" className="py-1.5 px-4 text-xs flex items-center gap-1.5 border-white/10 hover:border-accent hover:text-accent">
+                    <FiDownload size={13} /> Resume
+                  </Button>
+                </a>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,13 +109,25 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          {personalInfo.resumeUrl && (
-            <a href={personalInfo.resumeUrl} download target="_blank" rel="noopener noreferrer" className="pt-4">
-              <Button variant="primary" className="py-2.5 px-6 text-sm flex items-center gap-2">
-                <FiDownload size={16} /> Download Resume
-              </Button>
-            </a>
-          )}
+          
+          <div className="flex flex-col items-center gap-4 pt-4 border-t border-white/5 w-48">
+            {cycleTheme && (
+              <button
+                onClick={cycleTheme}
+                className="w-full flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg bg-white/5 border border-white/10 text-slate-300 text-sm hover:text-white cursor-pointer"
+              >
+                <FiLayers size={16} className="animate-spin-slow text-accent" /> Cycle Theme
+              </button>
+            )}
+
+            {personalInfo.resumeUrl && (
+              <a href={personalInfo.resumeUrl} download target="_blank" rel="noopener noreferrer" className="w-full">
+                <Button variant="primary" className="w-full py-2.5 px-6 text-sm flex items-center justify-center gap-2">
+                  <FiDownload size={16} /> Download Resume
+                </Button>
+              </a>
+            )}
+          </div>
         </div>
       )}
     </nav>

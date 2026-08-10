@@ -177,7 +177,7 @@ export default function Portfolio() {
       {!showIntro && <CustomCursor />}
 
       {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />}
-      {!showIntro && <Navbar />}
+      {!showIntro && <Navbar cycleTheme={cycleTheme} activeTheme={activeTheme} />}
       
       <main>
         <Hero />
@@ -196,18 +196,6 @@ export default function Portfolio() {
       </main>
       
       <Footer />
-
-      {/* Floating Theme Toggle Switcher Button */}
-      {!showIntro && (
-        <button
-          onClick={cycleTheme}
-          className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-xl bg-accent hover:bg-accent-hover text-white flex items-center justify-center shadow-lg shadow-accent/20 cursor-pointer hover:scale-105 active:scale-95 transition-all border border-white/10"
-          title="Cycle Accent Theme"
-          aria-label="Cycle Accent Theme"
-        >
-          <FiLayers size={20} className="animate-spin-slow" />
-        </button>
-      )}
 
       {/* Theme Selection Toast (Untitled UI Alert Style) */}
       {showToast && (
