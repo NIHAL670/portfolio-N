@@ -35,7 +35,7 @@ export function Experience() {
   }, []);
 
   return (
-    <section id="experience" className="py-20 md:py-28 bg-brand-dark relative overflow-hidden">
+    <section ref={ref} id="experience" className="py-20 md:py-28 bg-brand-dark relative overflow-hidden">
       {/* Background glowing blob */}
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[120px] pointer-events-none" />
 
