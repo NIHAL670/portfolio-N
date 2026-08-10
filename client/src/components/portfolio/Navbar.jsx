@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiDownload, FiLayers } from 'react-icons/fi';
+import { FiMenu, FiX, FiDownload, FiLayers, FiSun, FiMoon } from 'react-icons/fi';
 import { personalInfo, navLinks } from './data';
 import { useActiveSection } from './useScrollReveal';
 import { Button } from '../ui/Button';
 
-export function Navbar({ cycleTheme, activeTheme }) {
+export function Navbar({ cycleTheme, activeTheme, isDarkMode, setIsDarkMode }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -55,6 +55,16 @@ export function Navbar({ cycleTheme, activeTheme }) {
             </div>
             
             <div className="flex items-center gap-3 border-l border-white/10 pl-6">
+              {/* Light/Dark Mode Switcher */}
+              <button
+                onClick={() => setIsDarkMode(prev => !prev)}
+                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-muted hover:text-white flex items-center justify-center shadow-md cursor-pointer hover:scale-105 active:scale-95 transition-all border border-white/5"
+                title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                aria-label="Toggle Light/Dark Mode"
+              >
+                {isDarkMode ? <FiSun size={15} className="text-amber-400" /> : <FiMoon size={15} className="text-indigo-400" />}
+              </button>
+
               {cycleTheme && (
                 <button
                   onClick={cycleTheme}
@@ -111,6 +121,23 @@ export function Navbar({ cycleTheme, activeTheme }) {
           ))}
           
           <div className="flex flex-col items-center gap-4 pt-4 border-t border-white/5 w-48">
+            <button
+              onClick={() => {
+                setIsDarkMode(prev => !prev);
+              }}
+              className="w-full flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg bg-white/5 border border-white/10 text-slate-300 text-sm hover:text-white cursor-pointer"
+            >
+              {isDarkMode ? (
+                <>
+                  <FiSun size={16} className="text-amber-400" /> Light Mode
+                </>
+              ) : (
+                <>
+                  <FiMoon size={16} className="text-indigo-400" /> Dark Mode
+                </>
+              )}
+            </button>
+
             {cycleTheme && (
               <button
                 onClick={cycleTheme}

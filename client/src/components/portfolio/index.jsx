@@ -150,6 +150,7 @@ export default function Portfolio() {
   const [showIntro, setShowIntro] = useState(true);
   const [themeIdx, setThemeIdx] = useState(0);
   const [showToast, setShowToast] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const activeTheme = themes[themeIdx];
 
@@ -164,6 +165,14 @@ export default function Portfolio() {
     return () => clearTimeout(timer);
   }, [showToast, themeIdx]);
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove('light');
+    } else {
+      document.documentElement.classList.add('light');
+    }
+  }, [isDarkMode]);
+
   return (
     <div 
       style={{
@@ -177,7 +186,14 @@ export default function Portfolio() {
       {!showIntro && <CustomCursor />}
 
       {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />}
-      {!showIntro && <Navbar cycleTheme={cycleTheme} activeTheme={activeTheme} />}
+      {!showIntro && (
+        <Navbar 
+          cycleTheme={cycleTheme} 
+          activeTheme={activeTheme} 
+          isDarkMode={isDarkMode} 
+          setIsDarkMode={setIsDarkMode} 
+        />
+      )}
       
       <main>
         <Hero />
