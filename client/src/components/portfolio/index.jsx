@@ -182,9 +182,6 @@ export default function Portfolio() {
       }}
       className="min-h-screen bg-brand selection:bg-accent/30 selection:text-white"
     >
-      {/* Dynamic Creative Custom Follow Cursor */}
-      {!showIntro && <CustomCursor />}
-
       {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />}
       {!showIntro && (
         <Navbar 
