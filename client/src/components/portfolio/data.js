@@ -5,14 +5,14 @@ export const personalInfo = {
     "Machine Learning Engineer and Backend Developer who designs, trains, and deploys ML models behind real APIs — not notebooks that stay on a laptop.",
   roles: ["ML Engineer", "Backend Developer", "Python Developer"],
   email: "ynihal494@gmail.com",
-  phone: "+91 637 815 5393",
+  phone: "+91 6378155393",
   socials: {
-    linkedin: "https://linkedin.com/in/nihal-yadav",
+    linkedin: "https://www.linkedin.com/in/nihal-yadav-5131582b8?",
     github: "https://github.com/NIHAL670",
     huggingface: "https://huggingface.co/NIHAL670",
-    leetcode: "https://leetcode.com/u/NIHAL670/", // TODO: update with real URL
+    leetcode: "https://leetcode.com/u/n3qEbroOHI/",
   },
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "https://drive.google.com/file/d/1AZrOJEUvDmP1hpU8oHpMCDhHNbImNJOz/view?usp=drivesdk",
   availability: "Available for remote roles & freelance",
 };
 
@@ -23,8 +23,8 @@ export const bio = [
 ];
 
 export const stats = [
-  { value: "10+", label: "ML Systems Deployed" },
-  { value: "260+", label: "LeetCode Problems" },
+  { value: "6+", label: "ML Systems Deployed" },
+  { value: "360+", label: "LeetCode Problems" },
   { value: "1500", label: "LeetCode Peak Rating" },
   { value: "4", label: "Models Benchmarked" },
 ];
