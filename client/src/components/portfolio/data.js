@@ -92,7 +92,7 @@ export const projects = [
       { label: "Accuracy", value: "—", flag: "Measure with classification_report()" },
       { label: "Inference", value: "—", flag: "Time the predict() calls" },
     ],
-    liveUrl: "#", // TODO: add real URL
+    liveUrl: "https://ai-powered-crop-prediction-and-disease-detection-model-akzxt96.streamlit.app/", // TODO: add real URL
     githubUrl: "#", // TODO: add real URL
   },
   {
@@ -124,8 +124,8 @@ export const projects = [
       { label: "RMSE", value: "—", flag: "Run evaluation on test set" },
       { label: "Forecast Steps", value: "—", flag: "Document the horizon" },
     ],
-    liveUrl: "#", // TODO: add real URL
-    githubUrl: "#", // TODO: add real URL
+    liveUrl: "cryptoppredictionmodel-cqxjzk68cpcugixbppt8vt.streamlit.app", 
+    githubUrl: "#", 
   },
   {
     id: "sarsa-digital",
@@ -202,14 +202,14 @@ export const education = {
   degree: "B.Tech in Computer Science",
   location: "Ghaziabad, U.P.",
   period: "2024 – 2028 (Expected)",
-  gpa: "8.0 / 10 CGPA",
+  gpa: "7.8 / 10 CGPA",
 };
 
 export const achievements = [
   {
     icon: "trophy",
     title: "LeetCode",
-    detail: "Max Rating 1500 · 260+ problems solved",
+    detail: "Max Rating 1500 · 360+ problems solved",
     link: "#", // TODO: add real URL
   },
   {
