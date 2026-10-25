@@ -9,6 +9,7 @@ import {
   siGit,
   siGithub,
   siGithubactions,
+  siHandshake,
   siHuggingface,
   siInfosys,
   siJavascript,
@@ -71,6 +72,7 @@ const icons: Record<string, Icon> = {
   leetcode: siLeetcode,
   codeforces: siCodeforces,
   geeksforgeeks: siGeeksforgeeks,
+  handshake: siHandshake,
   infosys: siInfosys,
 };
 

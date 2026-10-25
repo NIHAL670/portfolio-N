@@ -31,7 +31,7 @@ export const stats = [
   { value: "1500", label: "LeetCode max rating" },
   { value: "360+", label: "LeetCode problems solved" },
   { value: "Pupil", label: "Codeforces rank" },
-  { value: "3", label: "Internships and campus roles" },
+  { value: "4", label: "Internships and roles" },
 ];
 
 export type Experience = {
@@ -45,6 +45,19 @@ export type Experience = {
 };
 
 export const experience: Experience[] = [
+  {
+    company: "Handshake AI",
+    logo: "handshake",
+    role: "LLM Evaluator",
+    period: "Sep 2026 — Nov 2026",
+    location: "Remote",
+    points: [
+      "Evaluating large language model responses for correctness, reasoning and instruction-following against detailed rubrics.",
+      "Writing difficult computer science and machine learning prompts to find where models fail, with written explanations of each failure.",
+      "Comparing and ranking alternative model answers, with justifications that feed into model improvement.",
+    ],
+    stack: ["LLM evaluation", "Prompt design", "Python"],
+  },
   {
     company: "Mirai School of Technology",
     role: "Machine Learning Intern",
