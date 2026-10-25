@@ -14,7 +14,6 @@ export const site = {
   headline: "I build machine learning systems and the backends that serve them.",
   intro:
     "I train models and build the services that run them: data pipelines, inference APIs, and the small interfaces people use to check the results. Computer science student at AKGEC, currently interning as an ML engineer at Mirai School of Technology.",
-  currently: { label: "Currently", value: "ML Intern at Mirai School of Technology" },
   socials: [
     { label: "GitHub", href: "https://github.com/NIHAL670", icon: "github" },
     {

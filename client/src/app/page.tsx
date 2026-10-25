@@ -41,7 +41,7 @@ export default function Home() {
 function Hero() {
   return (
     <section id="top" className={`${container} pt-12 pb-20 sm:pt-20 lg:pb-24`}>
-      <div className="grid items-center gap-14 lg:grid-cols-[1fr_360px] lg:gap-20">
+      <div className="grid items-center gap-14 lg:grid-cols-[1fr_280px] lg:gap-20">
         <div>
           <Reveal>
             <p className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-3 py-1 text-sm text-muted">
@@ -101,7 +101,7 @@ function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.1} className="mx-auto w-full max-w-[360px]">
+        <Reveal delay={0.1} className="mx-auto w-full max-w-[280px]">
           <figure className="overflow-hidden rounded-2xl border border-line bg-card shadow-[0_1px_2px_rgba(0,0,0,0.04),0_16px_40px_-20px_rgba(0,0,0,0.2)]">
             <div className="relative aspect-[4/5] bg-white">
               <Image
@@ -109,16 +109,12 @@ function Hero() {
                 alt={`Portrait of ${site.name}`}
                 fill
                 priority
-                sizes="(min-width: 1024px) 360px, 90vw"
+                sizes="280px"
                 className="object-cover object-[50%_12%] dark:brightness-95"
               />
             </div>
-            <figcaption className="flex items-center justify-between gap-4 border-t border-line px-5 py-4">
-              <div>
-                <p className="font-medium">{site.name}</p>
-                <p className="mt-0.5 text-sm text-muted">{site.currently.value}</p>
-              </div>
-              <span className="size-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+            <figcaption className="border-t border-line px-4 py-3 text-center text-sm font-medium">
+              {site.name}
             </figcaption>
           </figure>
         </Reveal>
