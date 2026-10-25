@@ -1,35 +1,33 @@
-# Codex — Web Design & Development Agency
+# Nihal Yadav — Portfolio
 
-A full-stack web agency website built with React, Express, and MongoDB.
+Personal site: https://portfolio-n-5uz6.vercel.app
 
-## Quick Start
+## Stack
 
-### 1. Environment Setup
-```bash
-cp .env.example .env
-# Fill in your MongoDB URI, Google OAuth credentials, email config
-```
+- Next.js 16 (App Router, statically prerendered) + React 19
+- TypeScript
+- Tailwind CSS v4
+- `motion` for scroll reveals (respects reduced-motion)
+- `next-themes` for light/dark mode
+- Generated Open Graph image, sitemap, robots.txt and JSON-LD for SEO
 
-### 2. Server
-```bash
-cd server
-npm install
-npm run dev
-```
+## Editing content
 
-### 3. Client
+All text on the site lives in [`client/src/content/site.ts`](client/src/content/site.ts):
+experience, projects, skills, achievements, education and links.
+Edit that file and redeploy; no component changes needed.
+
+## Run locally
+
 ```bash
 cd client
 npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open http://localhost:3000.
 
-## Tech Stack
-- **Frontend:** React (Vite) + Tailwind CSS
-- **Backend:** Node.js + Express.js
-- **Database:** MongoDB (Mongoose)
-- **Auth:** Google OAuth 2.0 (admin-only)
-- **Uploads:** Multer (images + videos)
-- **Email:** Nodemailer
+## Deploy
+
+Vercel, with the project's root directory set to `client`.
+`client/vercel.json` pins the framework to Next.js.
